@@ -3,6 +3,7 @@
 using Grpc.Net.Client;
 using GrpcDemo.Client;
 
+Console.WriteLine("Press enter to connect with server..");
 Console.ReadLine();
 
 var chanel = GrpcChannel.ForAddress("http://localhost:5176");
@@ -14,4 +15,4 @@ var response = await client.SayHelloAsync(new HelloRequest
     Name = "Toto"
 });
 
-Console.WriteLine($"Hello {response.Message}");
+Console.WriteLine(response.Message);

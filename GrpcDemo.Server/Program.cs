@@ -15,7 +15,7 @@ builder.Services.AddGrpc();
 // Kestrel doesn't support HTTP/2 with TLS on macOS
 builder.WebHost.ConfigureKestrel(options =>
 {
-    options.ListenLocalhost(5000, o =>
+    options.ListenLocalhost(5176, o =>
     {
         o.Protocols = HttpProtocols.Http2;
     });
